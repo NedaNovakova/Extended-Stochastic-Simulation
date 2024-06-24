@@ -1,0 +1,102 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imperius Curse Simulation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="inputs">
+        <div id="controls">
+            <button onclick="start()">Start</button>
+            <button onclick="stop()">Stop</button>
+            <button onclick="reset()">Reset</button>
+            <button onclick="toggleStrategies(this)">Apply Strategies</button>
+        </div>
+
+        <div id="parameters">
+            <div id="base">
+                <div>
+                    <label for="wizards">Wizards: </label>
+                    <input type="text" id="wizards">
+                </div>
+                <div>
+                    <label for="deathEaters">Death eaters: </label>
+                    <input type="text" id="deathEaters">
+                </div>
+                <div>
+                    <label for="successRate">Curse effectiveness: </label>
+                    <input type="text" id="successRate">
+                </div>
+                <div>
+                    <label for="recoveryRate">Recovery rate: </label>
+                    <input type="text" id="recoveryRate">
+                </div>        
+            </div>
+            
+            <div id="advanced">
+                <div>
+                    <label for="security" id="securityLabel">Security efficiency:</label>
+                    <input type="text" id="security">
+                </div>
+                <div>
+                    <label for="resistant" id="resistantLabel">Percentage of resistant wizards:</label>
+                    <input type="text" id="resistant">
+                </div>  
+            </div>
+        </div>
+    </div>
+
+    <div id="mainBody">
+        <div>
+            <div id="content">
+                <div id="yLabel">
+                    <span>100%</span>
+                    <span>90%</span>
+                    <span>80%</span>
+                    <span>70%</span>
+                    <span>60%</span>
+                    <span>50%</span>
+                    <span>40%</span>
+                    <span>30%</span>
+                    <span>20%</span>
+                    <span>10%</span>
+                    <span>0%</span>
+                </div>
+            
+                <div id="display">
+                    <canvas width="5px" height="501px" id="yAxis"></canvas>
+                    <canvas width="500px" height="501px" id="canvas"></canvas>
+                    <canvas width="500px" height="5px" id="xAxis"></canvas>
+                </div>
+            </div>
+        
+            <div id="xLabel">Days</div>
+        </div>
+    
+        <div id="statistics">
+            <h2>Statistics</h2>
+            <div class="stat"><span>Day: </span><span id="currentDay"></span></div>
+            <div class="stat"><span>Susceptible: </span><span id="currentSusceptible"></span></div>
+            <div class="stat"><span>Cursed: </span><span id="currentCursed"></span></div>
+            <div class="stat"><span>Recovered: </span><span id="currentRecovered"></span></div>
+            <div class="stat"><span>Average recovery time: </span><span id="avgRecTime"></span></div>
+            <div class="stat"><span>Most cursed at once:</span><span id="maxCursed"></span></div>
+            <div class="stat"><span>Herd immunity:</span><span id="noSusceptible"></span></div>
+            <div class="stat"><span>Curse eliminated:</span><span id="fullRecovery"></span></div>
+
+            <div id="strategies">
+                <div class="stat"><span>Active death eaters: </span><span id="currentM"></span></div>
+                <div class="stat"><span>Resistant cursed: </span><span id="resCursed"></span></div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="point.js"></script>
+    <script src="population.js"></script>
+    <script src="helper.js"></script>
+    <script src="model.js"></script>
+    <script src="controls.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
